@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('partials/head.ejs') %>
+
+    <body style="background-color:#74BCDE">
+        <div class="container">
+            <%- include('partials/navbar.ejs') %><br>
+            <h1>Pedidos</h1><br>
+            <div class="card" style="width: 100%;">
+                <div class="card-body">
+                    <form method="post" action="/pedidos" class="row g-3 needs-validation" novalidate>
+                        <div class="col-md-4">
+                            <label for="validationCustom01" class="form-label">Cantidad a comprar:</label>
+                            <input type="text" class="form-control" id="validationCustom01" placeholder="Ejemplo: 2" name="txt_cantidad_pedido" required>
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="validationCustom02" class="form-label">Tipo de Pago:</label>
+                            <select class="form-select" id="validationCustom02" name="cbo_tipo_pago_pedido" required>
+                                <option selected disabled value>Seleccione:</option>
+                                <option>Débito</option>
+                                <option>Crédito</option>
+                                <option>Prepago</option>
+                                <option>Cheque</option>
+                                <option>PayPal</option>
+                            </select>
+                            <div class="invalid-feedback">Por favor seleccione una opción válida.</div>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="validationCustom04" class="form-label">Fecha del Pedido:</label>
+                            <input type="date" class="form-control" id="validationCustom04" name="txt_fecha_pedido" required>
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="validationCustom05" class="form-label">Método de Envío:</label>
+                            <input type="text" class="form-control" id="validationCustom05" placeholder="Ejemplo: Starken, Correos chile" name="txt_metodo_envio" required>
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="validationCustom06" class="form-label">Estado del Pedido:</label>
+                            <input type="text" class="form-control" id="validationCustom06" placeholder="Ejemplo: Pendiente, Enviado" name="txt_estado_pedido" required>
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="validationCustom07" class="form-label">Ciudad de Entrega:</label>
+                            <input type="text" class="form-control" id="validationCustom07" placeholder="Ejemplo: Santiago, Valparaíso" name="txt_ciudad_entrega" required>
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-primary" type="submit">Realizar pedido</button>
+                         </div>
+                     </form>
+                </div><br>
+
+            </div>
+        </div>
+    </body></br>
+
+    <%- include('partials/footer.ejs') %>
+
+</html>

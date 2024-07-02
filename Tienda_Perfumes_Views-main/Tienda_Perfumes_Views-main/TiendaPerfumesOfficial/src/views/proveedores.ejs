@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <%- include('partials/head.ejs') %>
+
+    <body style="background-color:#74BCDE">
+        <div class="container">
+
+            <%- include('partials/navbar.ejs')%><br>
+
+            <h1>Proveedores</h1><br>
+            <div class="card" style="width: 1000;">
+                <div class="card-body">
+                    <form method="post" action="/proveedores" class="row g-3 needs-validation"
+                        novalidate>
+                        <div class="col-md-4">
+                            <label for="validationCustom01"
+                                class="form-label">Rut
+                                proveedor: </label>
+                            <input type="text" class="form-control"
+                                placeholder="Ejemplo: 11111111-1"
+                                id="validationCustom01" name="txt_rut_proveedor"
+                                required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="validationCustom02"
+                                class="form-label">Nombre
+                                proveedor: </label>
+                            <input type="text" class="form-control"
+                                id="validationCustom02"
+                                name="txt_nombre_proveedor"
+                                placeholder="Ejemplo: Juan" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="validationCustom04"
+                                class="form-label">Región proveedor: </label>
+                            <select class="form-select"
+                                name="cbo_region_proveedor"
+                                id="validationCustom04"
+                                required>
+                                <option selected disabled value>Seleccione:
+                                </option>
+                                <option>Región de Arica y Parinacota</option>
+                                <option>Región de Tarapacá</option>
+                                <option>Región de Antofagasta</option>
+                                <option>Región de Atacama</option>
+                                <option>Región de Coquimbo</option>
+                                <option>Región de Valparaíso</option>
+                                <option>Región Metropolitana</option>
+                                <option>Región de O’Higgins</option>
+                                <option>Región del Maule</option>
+                                <option>Región del Ñuble</option>
+                                <option>Región del Biobío</option>
+                                <option>Región de La Araucanía</option>
+                                <option>Región de Los Ríos</option>
+                                <option>Región de Los Lagos</option>
+                                <option>Región de Aysén</option>
+                                <option>Región de Magallanes</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Please select a valid state.
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="validationCustom04"
+                                class="form-label">Comuna proveedor: </label>
+                            <select class="form-select"
+                                name="cbo_comuna_proveedor"
+                                id="validationCustom04"
+                                required>
+                                <option selected disabled value>Seleccione:
+                                </option>
+                                <option>Rancagua</option>
+                                <option>Coinco</option>
+                                <option>Machalí</option>
+                                <option>Graneros</option>
+                                <option>Codegua</option>
+                                <option>San Francisco de Mostazal</option>
+                                <option>Coltauco</option>
+                                <option>Doñihue</option>
+                                <option>Requínoa</option>
+                                <option>Peumo</option>
+                                <option>San Vicente de Tagua Tagua</option>
+                                <option>Marchigue</option>
+                                <option>Rengo</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Please select a valid state.
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="validationCustom01"
+                                class="form-label">Número
+                                Local: </label>
+                            <input type="text" class="form-control"
+                                placeholder="Ejemplo: 1532"
+                                id="validationCustom01"
+                                name="txt_numero_local_proveedor" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="validationCustom02"
+                                class="form-label">Fono
+                                proveedor: </label>
+                            <input type="text" class="form-control"
+                                placeholder="Ejemplo: +56974852614"
+                                id="validationCustom02"
+                                name="txt_fono_proveedor"
+                                required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-primary"
+                                type="submit">Agregar
+                                Proveedor</button>
+                        </div>
+                    </div>
+                </div><br>
+        </div>
+    </body><br>
+
+    <%- include ('partials/footer.ejs')%>
+
+</html>

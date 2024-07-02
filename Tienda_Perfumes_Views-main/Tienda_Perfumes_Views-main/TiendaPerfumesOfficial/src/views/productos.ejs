@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('partials/head.ejs') %>
+</head>
+
+<body style="background-color:#74BCDE">
+    <div class="container">
+
+        <%- include('partials/navbar.ejs') %><br>
+
+            <h1>Comprar Productos</h1><br>
+            <div class="card" style="width: 1000px;">
+                <div class="card-body">
+                    <form method="post" action="/productos" class="row g-3 needs-validation" novalidate>
+                        <div class="col-md-3">
+                            <label for="validationCustom04" class="form-label">Género del Perfume: </label>
+                            <select class="form-select" id="validationCustom04" name="cboGeneroProducto" required>
+                                <option selected disabled value>Seleccione:</option>
+                                <option value="hombre">Para Hombre</option>
+                                <option value="mujer">Para Mujer</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Por favor seleccione una opción válida.
+                            </div>
+                        </div>
+                        <div class="col-md-3" id="perfumesHombre">
+                            <label for="validationCustom05" class="form-label">Nombre del Perfume: </label>
+                            <select class="form-select" id="validationCustom05" name="cboNombreProducto" required>
+                                <option selected disabled value>Seleccione:</option>
+                                <option>Acqua Di Gio Profondo</option>
+                                <option>Invictus</option>
+                                <option>Bad Boy</option>
+                                <option>Le Beau</option>
+                                <option>We are tribe</option>
+                                <option>phantom</option>
+                                <option>Halloween Man</option>
+                                <option>Sauvage Elixir</option>
+                                <option>Toy Boy</option>
+                                <option>Stronger With You</option>
+                                <option>XS Black</option>
+                                <option>Ultra Male</option>
+                                <option>Eros</option>
+                                <option>Valentino Born in Roma</option>
+                                <option>Boss Bottled</option>
+                                <option>Invictus Intense</option>
+                                <option>One Million Prive</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Por favor seleccione una opción válida.
+                            </div>
+                        </div>
+                        <div class="col-md-3" id="perfumesMujer" style="display: none;">
+                            <label for="validationCustom06" class="form-label">Nombre del Perfume: </label>
+                            <select class="form-select" id="validationCustom06" name="cboNombreProducto" required>
+                                <option selected disabled value>Seleccione:</option>
+                                <option>Amor Amor</option>
+                                <option>Ange ou Démon</option>
+                                <option>Carolina Herrera</option>
+                                <option>Code Armani</option>
+                                <option>Eternity</option>
+                                <option>Eros Pour Femme</option>
+                                <option>Euphoria</option>
+                                <option>Good Girl</option>
+                                <option>Fame</option>
+                                <option>Lady Million</option>
+                                <option>Very Good Girl</option>
+                                <option>212 Heroes</option>
+                                <option>My Way</option>
+                                <option>Poison Hypnotic</option>
+                                <option>The One</option>
+                                <option>Yes I am</option>
+                                <option>Ultraviolet</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Por favor seleccione una opción válida.
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="validationCustom07" class="form-label">Cantidad ML a comprar: </label>
+                            <select class="form-select" id="validationCustom07" name="cboMlProducto" required>
+                                <option selected disabled value>Seleccione:</option>
+                                <option>50ml</option>
+                                <option>100ml</option>
+                                <option>150ml</option>
+                                <option>200ml</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Por favor seleccione una opción válida.
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value id="invalidCheck" required>
+                                <label class="form-check-label" for="invalidCheck">
+                                    Acepto los términos y condiciones de la compra del producto.
+                                </label>
+                                <div class="invalid-feedback">
+                                    Debe aceptar antes de enviar.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <button class="btn btn-primary" type="submit">Comprar producto</button>
+                        </div>
+                    </form>
+
+                    <form id="eliminarProductoForm" method="POST">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <div class="form-group">
+                            <label for="id">ID Producto:</label>
+                            <input type="number" class="form-control" id="id" name="id" required>
+                        </div>
+                        <div class="form-group">
+                            <button id="eliminarProductoBtn" class="btn btn-danger">Eliminar Producto</button>
+                        </div>
+                    </form>
+
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function () {
+                            const cboGenero = document.querySelector('[name="cboGeneroProducto"]');
+                            const perfumesHombre = document.getElementById('perfumesHombre');
+                            const perfumesMujer = document.getElementById('perfumesMujer');
+
+                            cboGenero.addEventListener('change', function () {
+                                if (cboGenero.value === 'hombre') {
+                                    perfumesHombre.style.display = 'block';
+                                    perfumesMujer.style.display = 'none';
+                                } else if (cboGenero.value === 'mujer') {
+                                    perfumesHombre.style.display = 'none';
+                                    perfumesMujer.style.display = 'block';
+                                } else {
+                                    perfumesHombre.style.display = 'none';
+                                    perfumesMujer.style.display = 'none';
+                                }
+                            });
+
+                            const eliminarProductoBtn = document.getElementById('eliminarProductoBtn');
+                            eliminarProductoBtn.addEventListener('click', function () {
+                                const idProducto = document.getElementById('id').value;
+                                const eliminarProductoForm = document.getElementById('eliminarProductoForm');
+                                eliminarProductoForm.action = `/deleteProducto/${idProducto}`;
+                            });
+                        });
+                    </script>
+                </div>
+            </div><br>
+    </div>
+    <%- include('partials/footer.ejs') %>
+</body>
+
+</html>

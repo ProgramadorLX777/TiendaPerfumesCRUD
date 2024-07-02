@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('partials/head.ejs') %>
+
+    <style>
+    .carousel-item img {
+        width: 300;
+        height: 300;
+        object-fit: cover; /* Ajusta la imagen para que cubra el área sin distorsionarse */
+        margin: 0 auto; /* Centra la imagen horizontalmente */
+    }
+    .carousel-container {
+        width: 300;
+        margin: 0 auto; /* Centra el contenedor en la página */
+    }
+</style>
+
+    <body style="background-color:#74BCDE">
+        <div class="container">
+            <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                var carousel = document.querySelector('#carouselExampleFade');
+                var carouselBS = new bootstrap.Carousel(carousel, {
+                    interval: 3000, 
+                    pause: 'hover'
+                });
+            });
+        </script>
+
+            <%- include('partials/navbar.ejs') %><br>
+
+            <h1>Tienda de Perfumes Alternativos</h1><br>
+
+            <div class="card" style="width: 100%;">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-4">
+                            <div id="list-example" class="list-group">
+                                <a
+                                    class="list-group-item list-group-item-action"
+                                    href="#list-item-1">Presentación</a>
+                                <a
+                                    class="list-group-item list-group-item-action"
+                                    href="#list-item-2">Nuestros productos</a>
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <div data-bs-spy="scroll"
+                                data-bs-target="#list-example"
+                                data-bs-smooth-scroll="true"
+                                class="scrollspy-example" tabindex="0">
+                                <h4 id="list-item-1">Presentación</h4>
+                                <p>Explora nuestra selección de perfumes
+                                    alternativos con excelente duración.
+                                    Descubre aromas
+                                    únicos que perduran, capturando la esencia
+                                    de la sofisticación y el estilo. Encuentra
+                                    tu
+                                    fragancia perfecta que complementará tu día
+                                    a día con su distinción y calidad
+                                    inigualables.
+                                    Sumérgete en nuestro mundo de perfumes donde
+                                    la durabilidad y el encanto se encuentran en
+                                    cada gota. Déjate envolver por la magia de
+                                    estas creaciones meticulosamente
+                                    seleccionadas,
+                                    diseñadas para destacar y perdurar,
+                                    asegurando que cada momento sea memorable y
+                                    especial.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body><br><br><br>
+
+    <%- include('partials/footer.ejs')%>
+
+</html>

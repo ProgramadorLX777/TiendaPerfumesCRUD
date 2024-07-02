@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <%- include('partials/head.ejs') %>
+
+    <body style="background-color:#74BCDE">
+        <div class="container">
+            <%- include('partials/navbar.ejs') %><br>
+            <h1>Clientes</h1><br>
+            <div class="card" style="width: 1000;">
+                <div class="card-body">
+                    <form method="post" action="/clientes" class="row g-3 needs-validation" novalidate>
+                        <div class="col-md-4">
+                            <label for="validationCustom01" class="form-label">Rut cliente: </label>
+                            <input type="text" class="form-control" id="validationCustom01" placeholder="Ejemplo: 11111111-1" name="txt_rut_cliente" required>
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="validationCustom02" class="form-label">Nombre cliente: </label>
+                            <input type="text" class="form-control" id="validationCustom02" placeholder="Ejemplo: Juan" name="txt_nombre_cliente" required>
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="validationCustom02" class="form-label">Apellido cliente: </label>
+                            <input type="text" class="form-control" id="validationCustom02" placeholder="Ejemplo: Pérez" name="txt_apellido_cliente" required>
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="validationCustom04" class="form-label">Región cliente: </label>
+                            <select class="form-select" id="validationCustom04" name="cbo_region_cliente" required>
+                                <option selected disabled value>Seleccione:</option>
+                                <option>Región de Arica y Parinacota</option>
+                                <option>Región de Tarapacá</option>
+                                <option>Región de Antofagasta</option>
+                                <option>Región de Atacama</option>
+                                <option>Región de Coquimbo</option>
+                                <option>Región de Valparaíso</option>
+                                <option>Región Metropolitana</option>
+                                <option>Región de O’Higgins</option>
+                                <option>Región del Maule</option>
+                                <option>Región del Ñuble</option>
+                                <option>Región del Biobío</option>
+                                <option>Región de La Araucanía</option>
+                                <option>Región de Los Ríos</option>
+                                <option>Región de Los Lagos</option>
+                                <option>Región de Aysén</option>
+                                <option>Región de Magallanes</option>
+                            </select>
+                            <div class="invalid-feedback">Please select a valid state.</div>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="validationCustom04" class="form-label">Comuna cliente: </label>
+                            <select class="form-select" id="validationCustom04" name="cbo_comuna_cliente" required>
+                                <option selected disabled value>Seleccione:</option>
+                                <option>Iquique</option>
+                                <option>Alto Hospicio</option>
+                                <option>Antofagasta</option>
+                                <option>Tocopilla</option>
+                                <option>Copiapó</option>
+                                <option>Caldera</option>
+                                <option>La Serena</option>
+                                <option>Coquimbo</option>
+                                <option>Viña del Mar</option>
+                                <option>Quilpué</option>
+                                <option>Santiago</option>
+                                <option>Las Condes</option>
+                                <option>Rancagua</option>
+                                <option>Graneros</option>
+                                <option>Talca</option>
+                                <option>Curicó</option>
+                                <option>Chillán</option>
+                                <option>Quillón</option>
+                                <option>Concepción</option>
+                                <option>Talcahuano</option>
+                                <option>Temuco</option>
+                                <option>Villarrica</option>
+                                <option>Valdivia</option>
+                                <option>Río Bueno</option>
+                                <option>Puerto Montt</option>
+                                <option>Osorno</option>
+                                <option>Coyhaique</option>
+                                <option>Puerto Aysén</option>
+                                <option>Punta Arenas</option>
+                                <option>Puerto Natales</option>
+                            
+                            </select>
+                            <div class="invalid-feedback">Please select a valid state.</div>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="validationCustom01" class="form-label">Villa o pasaje cliente: </label>
+                            <input type="text" class="form-control" id="validationCustom01" placeholder="Ejemplo: Los álamos" name="txt_villa_pasaje_cliente" required>
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="validationCustom02" class="form-label">Número casa o departamento cliente: </label>
+                            <input type="text" class="form-control" id="validationCustom02" placeholder="Ejemplo: 6495" name="txt_numero_casa_departamento_cliente" required>
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="validationCustom02" class="form-label">Fono cliente: </label>
+                            <input type="text" class="form-control" id="validationCustom02" placeholder="Ejemplo: +56948621205" name="txt_fono_cliente" required>
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-primary" type="submit">Agregar Cliente</button>
+                        </div>
+                    </form>
+                </div><br>
+
+            </div>
+        </div>
+    </body><br>
+
+    <%- include ('partials/footer.ejs')%>
+</html>
